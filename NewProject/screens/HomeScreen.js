@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   Image,
   Platform,
@@ -12,17 +12,32 @@ import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
 
+class Greeting extends Component {
+  render() {
+    return (
+      <View style={{alignItems: 'center'}}>
+        <Text>Hello {this.props.name}!</Text>
+      </View>
+    );
+  }
+}
+
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
 
   render() {
+    let pic = {
+      uri: 'https://www.google.com/search?q=darth+sidious&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiQwbTiudLfAhUmJjQIHfjWD_kQ_AUIDigB&biw=1920&bih=938#imgrc=jadQGGgMks4mfM:'
+    };
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <View style={styles.welcomeContainer}>
             <Text>Hello world</Text>
+            <Greeting name='Darth Sidious'/>
+            <Image source={pic} style={{ width: 193, height: 110 }}/>
         </View>
         </ScrollView>
       </View>
