@@ -35,8 +35,8 @@ export default class HomeScreen extends React.Component {
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <View style={styles.welcomeContainer}>
-            <Text>Hello world</Text>
-            <Greeting name='Darth Sidious'/>
+            <Text style={styles.darthText}>Hello world</Text>
+            <Greeting name='Darth Sidious' style={styles.darthText}/>
             <Image source={pic} style={{ width: 193, height: 110 }}/>
         </View>
         </ScrollView>
@@ -165,4 +165,8 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#2e78b7',
   },
+  darthText: {
+    fontSize: 16,
+    color: 'red'
+  }
 });
